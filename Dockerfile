@@ -5,7 +5,9 @@ MAINTAINER tobilg <fb.tools.github@gmail.com>
 RUN apt-get update && apt-get install -yq --no-install-recommends --force-yes \
     socat && \
     rm -rf /var/lib/apt/lists/*
-	
+
 ADD start.sh .
-	
+
+RUN chmod +x start.sh
+
 ENTRYPOINT ["/start.sh"]
